@@ -1,0 +1,17 @@
+== Create new user:
+    curl -d '{ "user": { "first_name": "Test", "last_name": "Test" } }' 'http://localhost:3000/api/users' -H Content-Type:application/json
+
+== Delete user by id:
+    curl -X DELETE 'http://localhost:3000/api/users/1' -H Content-Type:application/json
+
+== Update user by id:
+    curl -X PUT -d '{ "user": { "first_name": "Another", "last_name": "Another" } }' 'http://localhost:3000/api/users/1' -H Content-Type:application/json
+
+== Create category in user:
+    curl -d '{ "category": { "name": "Films" } }' 'http://localhost:3000/api/users/1/category' -H Content-Type:application/json
+
+== Create book in category:
+    curl -d '{ "book": { "name": "Films" } }' 'http://localhost:3000/api/categories/1/book' -H Content-Type:application/json
+
+== Create book in user:
+    curl -d '{ "book": { "name": "Films" } }' 'http://localhost:3000/api/users/1/book' -H Content-Type:application/json
